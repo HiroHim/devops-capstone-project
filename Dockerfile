@@ -12,6 +12,6 @@ COPY service/ ./service/
 RUN useradd --uid 1000 theia && chown -R theia /app
 USER theia
 
-# Run the services
+# Run the service
 EXPOSE 8080
 CMD ["gunicorn", "--bind=0.0.0.0:8080", "--log-level=info", "service:app"]
